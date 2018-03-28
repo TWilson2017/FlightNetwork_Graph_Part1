@@ -4,8 +4,8 @@
 // Due Date:    3/22/18 at 12:30 pm
 //
 // Purpose:     Write a C++ program that creates an adjacency matrix
-//			    to represent ALL of the routes depicted in the given 
-//				adjacency matrix.
+//	        to represent ALL of the routes depicted in the given 
+//		adjacency matrix.
 //              
 // Author:      Tishauna Wilson
 //------------------------------------------------------------------
