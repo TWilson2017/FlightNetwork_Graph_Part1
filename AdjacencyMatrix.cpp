@@ -11,27 +11,27 @@ AdjacencyMatrix :: AdjacencyMatrix()
 {	
 	//Create an Array of Origin & Destination City Names
 	static string Array_Names[rows_cols_size] = {"Miami", "Tampa", "Key West", "Melbourne", "Jacksonville", "Atlanta",	
-									   "Birmingham", "Tallahassee", "Charleston", "Memphis", "Columbia", "Little Rock", 	
-									   "Jackson", "Mobile", "Fort Worth", "Sheveport", "Greenville", "Nashville", "Tulsa",
-									   "Morristown", "New Orleans", "Norman", "Seattle", "Spokane",	
-									   "Missoula", "Great Falls", "Portland", "Pendleton", "Medford", "Glassgow", "Boise",
-									   "Eureka", "Sacremento", "Reno", "Las Vegas", "Billings", "Bismarck"}; //Array for Origin & Destination Name
+						     "Birmingham", "Tallahassee", "Charleston", "Memphis", "Columbia", "Little Rock", 	
+						     "Jackson", "Mobile", "Fort Worth", "Sheveport", "Greenville", "Nashville", "Tulsa",
+						     "Morristown", "New Orleans", "Norman", "Seattle", "Spokane",	
+						     "Missoula", "Great Falls", "Portland", "Pendleton", "Medford", "Glassgow", "Boise",
+						     "Eureka", "Sacremento", "Reno", "Las Vegas", "Billings", "Bismarck"}; //Array for Origin & Destination Name
 	//Create new visited & Adjacency
 	visited = new bool [rows_cols_size];
-    Adjacency = new int* [rows_cols_size];
+        Adjacency = new int* [rows_cols_size];
 
 	//Assign Array_Names to Origin_RowName & Destination_ColName
 	Origin_RowName = Destination_ColName = Array_Names;
 	
 	//Initialize Adjacency Matrix using nested for-loops
-    for (int i = 0; i < rows_cols_size; i++)
-    {
-		Adjacency[i] = new int [rows_cols_size];
-        for(int j = 0; j < rows_cols_size; j++)
+        for (int i = 0; i < rows_cols_size; i++)
         {
+		Adjacency[i] = new int [rows_cols_size];
+        	for(int j = 0; j < rows_cols_size; j++)
+        	{
 			Adjacency[i][j] = 0;
-        }//for
-    }//for
+        	}//for
+    	}//for
 }//AdjacencyMatrix
 
 //-|----------------------
@@ -50,7 +50,7 @@ void AdjacencyMatrix :: CreateGraph()
 	//Test File For Error
 	if(inF.fail())
 	{
-		   cout << endl << "FATAL ERROR: UNABLE TO OPEN FILE \"Graph_Data.txt\". TERMINATING..."
+           cout << endl << "FATAL ERROR: UNABLE TO OPEN FILE \"Graph_Data.txt\". TERMINATING..."
                 << endl << endl;
            exit (1);
 	}//if
@@ -99,20 +99,20 @@ void AdjacencyMatrix :: Print_Graph()
 	OutF << endl;
 	
 	//Print out the Origin Cities & Flight Network
-    for(int i = 0; i < rows_cols_size; i++)
-    {
-		//Print out the Origin City
+    	for(int i = 0; i < rows_cols_size; i++)
+    	{
+    		//Print out the Origin City
 		OutF << left << Origin_RowName[i];
 		OutF << setw(20);
 		
 		//Print Flight Network
-        for(int j = 0; j < rows_cols_size; j++)
+        	for(int j = 0; j < rows_cols_size; j++)
 		{
 			OutF << right << Adjacency[i][j] << "\t\t\t\t\t";
-        }//2nd-for
+	        }//2nd-for
 		OutF <<endl;
-	}//1st-for
+    	}//1st-for
 	
-	//Close OutFile
-	OutF.close();
+    	//Close OutFile
+    	OutF.close();
 }//Print_Graph
